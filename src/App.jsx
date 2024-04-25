@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <div>
           <a href='/about'>about</a>
           <a href='/contact'>contact</a>
