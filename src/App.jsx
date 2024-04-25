@@ -1,6 +1,7 @@
 import React from 'react';
-import Routes from './routes/RoutesConfig.jsx';
-import { BrowserRouter } from 'react-router-dom';
+const About = React.lazy(() => import('./components/About.jsx'));
+const Contact = React.lazy(() => import('./components/Contact.jsx'));
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
@@ -9,7 +10,16 @@ const App = () => {
         <div>
           <a href='/about'>about</a>
           <a href='/contact'>contact</a>
-          <Routes />
+          <Routes>
+            <Route
+              path='/about'
+              element={<About />}
+            />
+            <Route
+              path='/contact'
+              element={<Contact />}
+            />
+          </Routes>
         </div>
       </BrowserRouter>
     </div>
